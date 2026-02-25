@@ -104,6 +104,10 @@ install_if_missing() {
       sudo apt install -y $2
       log_ok "$1 installed...next!"
     fi
+
+    if [[ "$1" == "git" ]]; then
+      git config --global pull.rebase true
+    fi
   else
     log_ok "$1 exists...next!"
   fi
@@ -134,7 +138,7 @@ install_dotnet_if_missing
 # Install PostgreSQL
 ########################################
 
-PG_VERSION="${PG_VERSION:-}"  # optional
+PG_VERSION="15"
 
 # macOS (Homebrew)
 if [[ "$OS" == "Darwin" ]]; then

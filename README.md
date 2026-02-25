@@ -1,15 +1,54 @@
-## Setup BTC Pay Server
+# BTCPay Server for Decred — One-Click Setup
 
-This one-click install script will ensure you have `brew` installed for macOS or `apt` for Linux. You should also confirm that `DCR_VERSION` and `BTC_VERSION` are the latest version, update them in `install.sh` if not.
+Installs and runs BTCPay Server with Decred support (Regnet ready, Mainnet/Testnet compatible). You should also confirm that `DCR_VERSION` and `BTC_VERSION` are the latest version, update them in `install.sh` if not.
 
 Check latest version for DCR at https://github.com/decred/decred-binaries/releases/latest/ and https://github.com/bitcoin/bitcoin/releases/latest for BTC. 
 
-1. Run `PG_VERSION=15 ./setup.sh` Or `PG_VERSION=16 ./setup.sh`.
-2. Run `./quit.sh` in the `main` tmux window to exit all running programs. You can navigate there with `Ctrl+b` followed by number `4`.
+## 🚀 Install
 
-If you quit the `nbx-harness` and intend to start again, just run `./simnet.sh` and do step 4 again to quit.
+Run (Supports macOS and Ubuntu/Debian Linux):
 
-If you want to build after and upstream update, use `./setup.sh`. Exiting tools/resources will be skipped.
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/ukane-philemon/bpscripts/master/setup.sh)
+```
+
+This will:
+
+1. Install required system tools
+2. Install Git (if missing)
+3. Install PostgreSQL + .NET
+4. Install Decred & Bitcoin binaries
+5. Start the nbx harness
+
+## 🌐 Open BTCPay
+
+After setup completes:
+
+```
+http://127.0.0.1:23002/
+```
+
+## 🔁 Restart Later
+
+```bash
+cd ~/bpscripts
+./simnet.sh
+```
+
+## 🛑 Stop
+
+Inside tmux main window, you can navigate there with `Ctrl+b` followed by number `4`:
+
+```bash
+./quit.sh
+```
+
+## 🔄 Update
+
+```bash
+cd ~/bpscripts
+./setup.sh
+```
 
 ## Note
 
