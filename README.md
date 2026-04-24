@@ -4,8 +4,18 @@ Tests the [BTCPay Server Decred plugin](https://github.com/bisoncraft/btcpayserv
 
 ## Run
 
+Requires a Linux environment. On Windows, [install WSL](https://learn.microsoft.com/en-us/windows/wsl/install) first.
+
+**WSL / Linux / macOS** — open a terminal and run:
+
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/ukane-philemon/bpscripts/master/e2etest.sh)
+curl -fsSL https://raw.githubusercontent.com/ukane-philemon/bpscripts/master/e2etest.sh -o ~/e2etest.sh && bash ~/e2etest.sh
+```
+
+**Windows CMD** — uses WSL under the hood:
+
+```cmd
+wsl curl -fsSL https://raw.githubusercontent.com/ukane-philemon/bpscripts/master/e2etest.sh -o ~/e2etest.sh && wsl bash ~/e2etest.sh
 ```
 
 Installs all dependencies, starts the Decred simnet harness, builds the plugin, and launches BTCPay Server. Then walks you through a payment test and a send test interactively.
@@ -52,7 +62,7 @@ Check latest version for DCR at https://github.com/decred/decred-binaries/releas
 Run (Supports macOS and Ubuntu/Debian Linux):
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/ukane-philemon/bpscripts/master/setup.sh)
+curl -fsSL https://raw.githubusercontent.com/ukane-philemon/bpscripts/master/setup.sh -o ~/setup.sh && bash ~/setup.sh
 ```
 
 This will:
