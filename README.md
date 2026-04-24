@@ -1,3 +1,46 @@
+# Decred Plugin — End-to-End Test
+
+Tests the [BTCPay Server Decred plugin](https://github.com/bisoncraft/btcpayserver-decred-plugin) against a local simnet. No prior installs required.
+
+## Run
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/ukane-philemon/bpscripts/master/e2etest.sh)
+```
+
+Installs all dependencies, starts the Decred simnet harness, builds the plugin, and launches BTCPay Server. Then walks you through a payment test and a send test interactively.
+
+Already cloned? Run directly:
+
+```bash
+cd ~/bpscripts && ./e2etest.sh
+```
+
+Set `PLUGIN_REPO_URL` to test a different fork:
+
+```bash
+PLUGIN_REPO_URL=https://github.com/<you>/btcpayserver-decred-plugin ./e2etest.sh
+```
+
+## Key commands
+
+| Command | What it does |
+|---|---|
+| `./e2etest.sh` | Full end-to-end run (default) |
+| `./e2etest.sh setup` | Install + build everything without starting BTCPay Server |
+| `./e2etest.sh run` | Start BTCPay Server in the foreground (watch logs) |
+| `./e2etest.sh test` | Re-run the payment and send tests against a running server |
+| `./e2etest.sh reset` | Stop sessions, drop DB, clear plugin state, rebuild |
+| `./e2etest.sh clean` | Remove everything: sessions, DB, repos, binaries |
+
+## BTCPay Server URL
+
+```
+http://localhost:23002
+```
+
+---
+
 # BTCPay Server for Decred — One-Click Setup
 
 Installs and runs BTCPay Server with Decred support (Regnet ready, Mainnet/Testnet compatible). You should also confirm that `DCR_VERSION` and `BTC_VERSION` are the latest version, update them in `install.sh` if not.
