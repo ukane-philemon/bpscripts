@@ -1,4 +1,4 @@
-# Decred Plugin — End-to-End Test
+# Decred Plugin — End-to-End Test (Recommended)
 
 Tests the [BTCPay Server Decred plugin](https://github.com/bisoncraft/btcpayserver-decred-plugin) against a local simnet. No prior installs required.
 
@@ -51,7 +51,7 @@ http://localhost:23002
 
 ---
 
-# BTCPay Server for Decred — One-Click Setup
+# BTCPay Server for Decred — One-Click Setup (Legacy)
 
 Installs and runs BTCPay Server with Decred support (Regnet ready, Mainnet/Testnet compatible). You should also confirm that `DCR_VERSION` and `BTC_VERSION` are the latest version, update them in `install.sh` if not.
 
